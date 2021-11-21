@@ -12,8 +12,8 @@ function authJwt() {
   }).unless({
     path: [
     { url: /\/blog(.*)/, methods: ["GET", "OPTION"] },
-      `users/login`,
-      `users/signup`,
+      `/users/login`,
+      `/users/signup`,
     ],
   });
 }
