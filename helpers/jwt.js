@@ -1,7 +1,6 @@
 const expressJwt = require("express-jwt");
 const dotenv=require('dotenv')
 dotenv.config({ path: './config.env'})
-const api = process.env.API_URL;
 
 function authJwt() {
   const secret = process.env.secret;
@@ -13,8 +12,8 @@ function authJwt() {
   }).unless({
     path: [
     { url: /\/blog(.*)/, methods: ["GET", "OPTION"] },
-      `${api}/users/login`,
-      `${api}/users/signup`,
+      `users/login`,
+      `users/signup`,
     ],
   });
 }
